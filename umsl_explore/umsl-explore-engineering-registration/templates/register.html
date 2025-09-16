@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% block title %}Register — UMSL Explore Engineering Day{% endblock %}
+{% block content %}
+<h2>Register to Attend</h2>
+<form method="post" class="form">
+  <h3>Basic Information</h3>
+  <div class="grid">
+    <label>
+      <span>Full Name *</span>
+      <input type="text" name="full_name" required />
+    </label>
+    <label>
+      <span>Email *</span>
+      <input type="email" name="email" required />
+    </label>
+  </div>
+  <div class="grid">
+    <label>
+      <span>Phone</span>
+      <input type="tel" name="phone" required />
+    </label>
+    <label>
+      <span>Date of Birth</span>
+      <input type="date" name="date_of_birth" required />
+    </label>
+  </div>
+  
+  <h3>Address</h3>
+  <div class="grid">
+    <label>
+      <span>Address Line 1</span>
+      <input type="text" name="address_line1" required />
+    </label>
+    <label>
+      <span>Address Line 2</span>
+      <input type="text" name="address_line2" required />
+    </label>
+  </div>
+  <div class="grid">
+    <label>
+      <span>City</span>
+      <input type="text" name="city" required />
+    </label>
+    <label>
+      <span>State/Province</span>
+      <input type="text" name="state" required />
+    </label>
+  </div>
+  <div class="grid">
+    <label>
+      <span>Postal Code</span>
+      <input type="text" name="postal_code" required />
+    </label>
+    <label>
+      <span>Country</span>
+      <input type="text" name="country" required />
+    </label>
+  </div>
+  <div class="grid">
+    <label>
+      <span>Phone</span>
+      <input type="tel" name="phone" />
+    </label>
+    <label>
+      <span>Date of Birth</span>
+      <input type="date" name="date_of_birth" />
+    </label>
+  </div>
+
+  <h3>School Information</h3>
+  <div class="grid">
+    <label>
+      <span>High School / College</span>
+      <input type="text" name="school" required />
+    </label>
+    <label>
+      <span>Grade / Year</span>
+      <input type="text" name="grade" placeholder="e.g., 11th grade, Sophomore" required />
+    </label>
+  </div>
+  <div class="grid">
+    <label>
+      <span>GPA</span>
+      <input type="text" name="gpa" placeholder="e.g., 3.5" required />
+    </label>
+    <label>
+      <span>Expected Graduation Year</span>
+      <input type="text" name="graduation_year" placeholder="e.g., 2026" required />
+    </label>
+  </div>
+
+  <h3>Academic Plans</h3>
+  <div class="grid">
+    <label>
+      <span>Anticipated Major</span>
+      <input type="text" name="anticipated_major" placeholder="e.g., Mechanical Engineering" required />
+    </label>
+    <label>
+      <span>Anticipated Start Semester</span>
+      <select name="anticipated_start_semester" required>
+        <option value="">Select</option>
+        <option value="Fall">Fall</option>
+        <option value="Spring">Spring</option>
+        <option value="Summer">Summer</option>
+      </select>
+    </label>
+  </div>
+  <div class="grid">
+    <label>
+      <span>Anticipated Start Year</span>
+      <input type="text" name="anticipated_start_year" placeholder="e.g., 2026" required />
+    </label>
+    <label>
+      <span>Academic Plan (brief)</span>
+      <input type="text" name="academic_plan" placeholder="e.g., transfer after AA, direct entry, etc." required />
+    </label>
+  </div>
+
+  <h3>Event Details</h3>
+  <div class="grid">
+    <label>
+      <span># of Guests</span>
+      <input type="number" min="0" name="guests" value="0" required />
+    </label>
+    <label>
+      <span>T-Shirt Size</span>
+      <select name="tshirt_size" required>
+        <option value="">Select Size</option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="XXL">XXL</option>
+      </select>
+    </label>
+  </div>
+  <label>
+    <span>Dietary Restrictions</span>
+    <textarea name="dietary_restrictions" rows="2" placeholder="Any food allergies or dietary needs?" required></textarea>
+  </label>
+
+  <h3>Emergency Contact</h3>
+  <div class="grid">
+    <label>
+      <span>Emergency Contact Name</span>
+      <input type="text" name="emergency_contact_name" required />
+    </label>
+    <label>
+      <span>Emergency Contact Phone</span>
+      <input type="tel" name="emergency_contact_phone" required />
+    </label>
+  </div>
+  <label>
+    <span>Relationship to Emergency Contact</span>
+    <input type="text" name="emergency_contact_relationship" placeholder="e.g., Parent, Guardian" required />
+  </label>
+
+  <h3>Parent/Guardian</h3>
+  <div class="grid">
+    <label>
+      <span>Parent/Guardian Name</span>
+      <input type="text" name="guardian_name" required />
+    </label>
+    <label>
+      <span>Parent/Guardian Email</span>
+      <input type="email" name="guardian_email" required />
+    </label>
+  </div>
+
+  <h3>Additional Information</h3>
+  <label>
+    <span>Engineering Disciplines of Interest</span>
+    <textarea name="interests" rows="3" placeholder="e.g., Mechanical Engineering, Computer Science, Civil Engineering, etc." required></textarea>
+  </label>
+  <div class="grid">
+    <label>
+      <span>How will you get to the event?</span>
+      <select name="transportation" required>
+        <option value="">Select Option</option>
+        <option value="Driving">Driving</option>
+        <option value="Public Transportation">Public Transportation</option>
+        <option value="Parent/Guardian Drop-off">Parent/Guardian Drop-off</option>
+        <option value="Carpool">Carpool</option>
+        <option value="Other">Other</option>
+      </select>
+    </label>
+    <label>
+      <span>How did you hear about this event?</span>
+      <select name="heard_about_event" required>
+        <option value="">Select Option</option>
+        <option value="School Counselor">School Counselor</option>
+        <option value="Teacher">Teacher</option>
+        <option value="UMSL Website">UMSL Website</option>
+        <option value="Social Media">Social Media</option>
+        <option value="Friend/Family">Friend/Family</option>
+        <option value="Other">Other</option>
+      </select>
+    </label>
+  </div>
+  <label class="checkbox-label">
+    <input type="checkbox" name="first_time_attendee" required />
+    <span>This is my first time attending a UMSL Engineering event</span>
+  </label>
+  <label>
+    <span>Additional Notes</span>
+    <textarea name="notes" rows="4" placeholder="Any accessibility needs, questions, or additional information?" required></textarea>
+  </label>
+  <div class="actions">
+    <button type="submit">Submit Registration</button>
+  </div>
+</form>
+<p class="note">We'll send confirmation details and updates to the email you provide.</p>
+{% endblock %}

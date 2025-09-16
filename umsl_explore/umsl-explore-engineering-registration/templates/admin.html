@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Admin — Registrations{% endblock %}
+{% block content %}
+<h2>Registrations</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>When</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>School</th>
+      <th>Grade</th>
+      <th>GPA</th>
+      <th>Graduation</th>
+      <th>Guests</th>
+      <th>T-Shirt</th>
+      <th>Start</th>
+      <th>Major</th>
+      <th>Emergency Contact</th>
+      <th>Interests</th>
+      <th>Transport</th>
+      <th>First Time</th>
+      <th>Heard About</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in regs %}
+    <tr>
+      <td>{{ r.created_at.strftime('%m/%d %H:%M') }}</td>
+      <td>{{ r.full_name }}</td>
+      <td><a href="mailto:{{ r.email }}">{{ r.email }}</a></td>
+      <td>{{ r.phone }}</td>
+      <td>{{ r.school }}</td>
+      <td>{{ r.grade }}</td>
+      <td>{{ r.gpa }}</td>
+      <td>{{ r.graduation_year }}</td>
+      <td>{{ r.guests }}</td>
+      <td>{{ r.tshirt_size }}</td>
+      <td>{{ r.anticipated_start_semester }} {{ r.anticipated_start_year }}</td>
+      <td>{{ r.anticipated_major }}</td>
+      <td>{{ r.emergency_contact_name }}<br/>{{ r.emergency_contact_phone }}</td>
+      <td>{{ r.interests[:50] }}{% if r.interests|length > 50 %}...{% endif %}</td>
+      <td>{{ r.transportation }}</td>
+      <td>{{ 'Yes' if r.first_time_attendee else 'No' }}</td>
+      <td>{{ r.heard_about_event }}</td>
+      <td>{{ r.notes[:50] }}{% if r.notes|length > 50 %}...{% endif %}</td>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="16">No registrations yet.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

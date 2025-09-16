@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Thank You — UMSL Explore Engineering Day{% endblock %}
+{% block content %}
+<h2>Thank you!</h2>
+<p>Your registration has been received. We look forward to seeing you at the event.</p>
+<p><a href="{{ url_for(register) }}">Submit another response</a> or <a href="{{ url_for(admin) }}">view admin list</a>.</p>
+{% endblock %}
