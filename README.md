@@ -1,1 +1,1 @@
-# umsl_explore
+# SimpleGraphics
